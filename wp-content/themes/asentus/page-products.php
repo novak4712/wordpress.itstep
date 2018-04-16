@@ -1,0 +1,273 @@
+<?php
+/*
+Template Name: Products
+*/
+?>
+<?php get_header(); ?>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <div class="container">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            </ol>
+        </div>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/1920x1080/01.jpg" alt="Slider Image">
+                <div class="container">
+                    <div class="carousel-centered">
+                        <div class="margin-b-40">
+                            <h1 class="carousel-title">Hi-Tech Design</h1>
+                            <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br/> enim minim estudiat veniam siad venumus dolore</p>
+                        </div>
+                        <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/1920x1080/02.jpg" alt="Slider Image">
+                <div class="container">
+                    <div class="carousel-centered">
+                        <div class="margin-b-40">
+                            <h2 class="carousel-title">Hi-Tech Design</h2>
+                            <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br/> enim minim estudiat veniam siad venumus dolore</p>
+                        </div>
+                        <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--========== SLIDER ==========-->
+
+<!--========== PAGE LAYOUT ==========-->
+<!-- Our Exceptional Solutions -->
+<div class="content-lg container">
+    <div class="row margin-b-40">
+        <div class="col-sm-6">
+            <?php
+            // параметры по умолчанию
+            $args = array(
+                'numberposts' => 1,
+                'category' => 8,
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'include' => array(110),
+                'exclude' => array(),
+                'meta_key' => '',
+                'meta_value' => '',
+                'post_type' => 'post',
+                'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+            );
+
+            $posts = get_posts($args);
+
+            foreach ($posts as $post) {
+                setup_postdata($post);
+                ?>
+
+                    <h2><?php the_title(); ?></h2>
+                    <?php the_content(); ?>
+
+                <?php
+            }
+
+            wp_reset_postdata(); // сброс
+
+            ?>
+        </div>
+    </div>
+    <!--// end row -->
+
+    <div class="row margin-b-50">
+        <!-- Our Exceptional Solutions -->
+        <?php
+        // параметры по умолчанию
+        $args = array(
+            'numberposts' => 3,
+            'category' => 8,
+            'orderby' => 'date',
+            'order' => 'ASC',
+            'include' => array(),
+            'exclude' => array(80,110),
+            'meta_key' => '',
+            'meta_value' => '',
+            'post_type' => 'post',
+            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+        );
+
+        $posts = get_posts($args);
+
+        foreach ($posts as $post) {
+            setup_postdata($post);
+            ?>
+            <div class="col-sm-4 sm-margin-b-50">
+                <div class="margin-b-20">
+                    <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                        <?php if ( has_post_thumbnail() ) {
+                            the_post_thumbnail($size = 'post_thumbnail', $attr = 'class=img-responsive');
+                        } ?>
+
+                    </div>
+                </div>
+                <h4><a href="#"><?php the_title(); ?></a> <span class="text-uppercase margin-l-20"><?php the_field('activity'); ?></span></h4>
+                <?php the_content(); ?>
+                <a class="link" href="#">Read More</a>
+            </div>
+            <?php
+        }
+
+        wp_reset_postdata(); // сброс
+
+        ?>
+        <!-- End Our Exceptional Solutions -->
+    </div>
+    <!--// end row -->
+
+    <div class="row">
+        <!-- Our Exceptional Solutions -->
+        <?php
+        // параметры по умолчанию
+        $args = array(
+            'numberposts' => 3,
+            'category' => 8,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'include' => array(),
+            'exclude' => array(80,110),
+            'meta_key' => '',
+            'meta_value' => '',
+            'post_type' => 'post',
+            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+        );
+
+        $posts = get_posts($args);
+
+        foreach ($posts as $post) {
+            setup_postdata($post);
+            ?>
+            <div class="col-sm-4 sm-margin-b-50">
+                <div class="margin-b-20">
+                    <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
+                        <?php if ( has_post_thumbnail() ) {
+                            the_post_thumbnail($size = 'post_thumbnail', $attr = 'class=img-responsive');
+                        } ?>
+
+                    </div>
+                </div>
+                <h4><a href="#"><?php the_title(); ?></a> <span class="text-uppercase margin-l-20"><?php the_field('activity'); ?></span></h4>
+                <?php the_content(); ?>
+                <a class="link" href="#">Read More</a>
+            </div>
+            <?php
+        }
+
+        wp_reset_postdata(); // сброс
+
+        ?>
+        <!-- End Our Exceptional Solutions -->
+    </div>
+    <!--// end row -->
+</div>
+<!-- End Our Exceptional Solutions -->
+
+    <!-- Clients -->
+    <div class="bg-color-sky-light">
+        <div class="content-lg container">
+            <!-- Swiper Clients -->
+            <div class="swiper-slider swiper-clients">
+                <!-- Swiper Wrapper -->
+                <div class="swiper-wrapper">
+                    <?php
+                    // параметры по умолчанию
+                    $args = array(
+                        'numberposts' => 0,
+                        'category' => 9,
+                        'orderby' => 'date',
+                        'order' => 'ASC',
+                        'include' => array(),
+                        'exclude' => array(),
+                        'meta_key' => '',
+                        'meta_value' => '',
+                        'post_type' => 'post',
+                        'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                    );
+
+                    $posts = get_posts($args);
+
+                    foreach ($posts as $post) {
+                        setup_postdata($post);
+                        ?>
+                        <div class="swiper-slide">
+                            <?php if ( has_post_thumbnail() ) {
+                                the_post_thumbnail($size = 'post_thumbnail', $attr = 'swiper-clients-img');
+                            } ?>
+                        </div>
+                        <?php
+                    }
+
+                    wp_reset_postdata(); // сброс
+
+                    ?>
+
+                </div>
+                <!-- End Swiper Wrapper -->
+            </div>
+            <!-- End Swiper Clients -->
+        </div>
+    </div>
+    <!-- End Clients -->
+
+    <!-- Promo Section -->
+    <div class="promo-section overflow-h">
+        <?php
+        // параметры по умолчанию
+        $args = array(
+            'numberposts' => 0,
+            'category' => 12,
+            'orderby' => 'date',
+            'order' => 'ASC',
+            'include' => array(),
+            'exclude' => array(),
+            'meta_key' => '',
+            'meta_value' => '',
+            'post_type' => 'post',
+            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+        );
+
+        $posts = get_posts($args);
+
+        foreach ($posts as $post) {
+            setup_postdata($post);
+            ?>
+            <div class="container">
+                <div class="clearfix">
+                    <div class="ver-center">
+                        <div class="ver-center-aligned">
+                            <div class="promo-section-col">
+                                <h2><?php the_title(); ?></h2>
+                                <?php the_content(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="promo-section-img-right">
+                <?php if ( has_post_thumbnail() ) {
+                    the_post_thumbnail($size = 'post_thumbnail', $attr = 'img-responsive');
+                } ?>
+            </div>
+            <?php
+        }
+
+        wp_reset_postdata(); // сброс
+
+        ?>
+
+    </div>
+    <!-- End Promo Section -->
+<!--========== END PAGE LAYOUT ==========-->
+<?php get_footer();
