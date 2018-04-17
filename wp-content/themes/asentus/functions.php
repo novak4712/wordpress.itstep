@@ -80,5 +80,5 @@ function nav_link_filter($atts, $item, $args, $depth){
 
 }
 add_theme_support( 'post-thumbnails' );
-add_image_size('Team', '360', '420', 'true');
-add_image_size('Questions', '360', '213', 'true');
+//add_image_size('Team', '360', '420', 'true');
+//add_image_size('Questions', '360', '213', 'true');

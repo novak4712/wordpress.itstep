@@ -4,44 +4,12 @@ Template Name: FAQ
 */
 ?>
 <?php get_header(); ?>
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <div class="container">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            </ol>
-        </div>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/1920x1080/01.jpg" alt="Slider Image">
-                <div class="container">
-                    <div class="carousel-centered">
-                        <div class="margin-b-40">
-                            <h1 class="carousel-title">Hi-Tech Design</h1>
-                            <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br/> enim minim estudiat veniam siad venumus dolore</p>
-                        </div>
-                        <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/1920x1080/02.jpg" alt="Slider Image">
-                <div class="container">
-                    <div class="carousel-centered">
-                        <div class="margin-b-40">
-                            <h2 class="carousel-title">Hi-Tech Design</h2>
-                            <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br/> enim minim estudiat veniam siad venumus dolore</p>
-                        </div>
-                        <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
-                    </div>
-                </div>
-            </div>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri(); ?>/assets/img/1920x1080/01.jpg" style="background: url(<?php echo get_template_directory_uri(); ?>/assets/img/1920x1080/01.jpg)">
+        <div class="parallax-content container">
+            <h1 class="carousel-title">FAQ</h1>
+            <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br/> enim minim estudiat veniam siad venumus dolore</p>
         </div>
     </div>
-    <!--========== SLIDER ==========-->
 
     <!--========== PAGE LAYOUT ==========-->
     <!-- Service -->
@@ -228,7 +196,7 @@ Template Name: FAQ
                 </div>
                 <div class="col-sm-4 col-sm-offset-1">
                     <?php if ( has_post_thumbnail() ) {
-                        the_post_thumbnail($size = 'Questions', $attr = 'img-responsive');
+                        the_post_thumbnail($size = 'Questions', $attr = 'class=img-responsive');
                     } ?>
 
                 </div>

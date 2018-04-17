@@ -255,7 +255,7 @@ Template Name: Главная
                     ?>
                     <div class="swiper-slide">
                                 <?php if ( has_post_thumbnail() ) {
-                                    the_post_thumbnail($size = 'post_thumbnail', $attr = 'swiper-clients-img');
+                                    the_post_thumbnail($size = 'post_thumbnail', $attr = 'class=swiper-clients-img');
                                 } ?>
                     </div>
                     <?php
@@ -427,7 +427,7 @@ Template Name: Главная
             </div>
             <div class="promo-section-img-right">
                 <?php if ( has_post_thumbnail() ) {
-                    the_post_thumbnail($size = 'post_thumbnail', $attr = 'img-responsive');
+                    the_post_thumbnail($size = 'post_thumbnail', $attr = 'class=img-responsive');
                 } ?>
             </div>
             <?php
